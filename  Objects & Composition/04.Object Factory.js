@@ -1,4 +1,18 @@
-function solve(library,orders){
+function factory(library,orders){
+    const arr = []
+for(let order of orders ){
+    const composed = Object.assign({},order.template)
+    for(let part of order.parts){
+        composed[part]=library[part]
+    }
+    arr.push(composed)
+}
+return arr
+
+
+}
+
+
 const library = {
     print: function () {
       console.log(`${this.name} is printing a page`);
@@ -10,17 +24,6 @@ const library = {
       console.log(`${this.name} is playing '${track}' by ${artist}`);
     },
   };
-const printer ={name: 'ACME Printer',print}
-const scanner = {name:  'Initech Scanner',scan}
-const coppier ={name: 'ComTron Copier',print,scan}
-const stereo = {name: 'BoomBox Stereo',play}
-
-let result = []
-result.push(printer)
-result.push(scanner)
-result.push(coppier)
-result.push(stereo);
-
 
   const orders = [
     {
@@ -43,5 +46,3 @@ result.push(stereo);
   const products = factory(library, orders);
   console.log(products);
 
-}
-solve()  
