@@ -26,7 +26,7 @@ function convert(input,unit){
         yrd:inMeters*ratios.yrd,
         ft:inMeters*ratios.ft,
         in:inMeters*ratios.in
-    
+        
     }
 }
 
