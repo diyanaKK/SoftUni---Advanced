@@ -14,7 +14,7 @@ function solve() {
         ev.preventDefault()
         let priceNum = Number(price.value)
         if (name.value && hall.value && priceNum) {
-            if (!isNaN(priceNum)) {
+            
                 let nameV = name.value
                 let hallV = hall.value
 
@@ -48,7 +48,7 @@ function solve() {
                 div.appendChild(buttonArchive)
                 li.appendChild(div)
                 ul.appendChild(li)
-            }
+            
 
 
 
@@ -56,8 +56,8 @@ function solve() {
                 let currentCont = ev.target.parentElement.parentElement
 
                 let currentI = Number(currentCont.querySelector('input').value)
-                if ( currentI && currentI !== 0) {
-                    if (!isNaN(currentI)) {
+                
+                    if (currentI || currentI ===0) {
                         let archiveUl = archive.querySelector('ul')
                         let filmName = currentCont.querySelector('span').textContent
                         let priceSingle = currentCont.querySelector('div strong')
@@ -83,9 +83,8 @@ function solve() {
 
 
                         function onDelete(ev) {
-                            if(newLi){
                                 newLi.remove()
-                            }   
+                                     
                         }
                         buttonClear.addEventListener('click', clear)
 
@@ -95,7 +94,7 @@ function solve() {
 
                         }
                     }
-                }
+                
             }
         }
     }
