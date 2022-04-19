@@ -8,22 +8,21 @@ class Stringer {
     }
 
     decrease(length) {
-        if(this.innerLength === 0){
-            this.innerLength = 0
-        }
         this.innerLength -= Number(length)
-        if (this.innerLength <= 0) {
+        if (this.innerLength < 0) {
             this.innerLength = 0
         }
     }
     toString(){
         if(this.innerString.length > this.innerLength){
-           let diff= this.innerString.length - this.innerLength
-           let newString = this.innerString.substring(0,diff)
-           newString +='...'
-           return newString
-        }else if(this.innerString - this.innerLength === 0){
-            return '...'
+            if(this.innerLength === 0){
+                return '...'  
+            }else{
+                let diff= this.innerString.length - this.innerLength
+                let newString = this.innerString.substring(0,diff)
+                newString +='...'
+                return newString
+            }
         }else{
             return this.innerString
         }
