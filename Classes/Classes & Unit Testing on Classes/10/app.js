@@ -30,6 +30,7 @@ class Contact {
         phone.textContent = this.phone
         email.textContent = this.email
     }
+    
 }
 
 
