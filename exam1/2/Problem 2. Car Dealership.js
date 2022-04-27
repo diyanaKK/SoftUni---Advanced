@@ -16,7 +16,7 @@ class CarDealership {
     }
     sellCar(model, desiredMileage) {
         let searchParam = model;
-        let currentCar = this.availableCars.find(currM => currM.model === searchParam)
+        let currentCar = this.availableCars
 
         if (currentCar) {
             let horsePower = currentCar.horsepower
